@@ -9,5 +9,5 @@ export interface Course {
     teacherId: number;
     teacher?: Teacher;
     assignmentFile?: string;
-    studentCourses?: StudentCourse[];
+    studentCourses?: StudentCourse[] | undefined;
   }

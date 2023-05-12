@@ -22,7 +22,7 @@ export class TeacherComponent implements OnInit {
   }
 
   getAllTeachers() {
-    this.teacherService.getAllTeachers().subscribe((response) => {
+    this.teacherService.getAllTeachers().subscribe((response: Teacher[]) => {
       this.teachers = response;
     });
   }

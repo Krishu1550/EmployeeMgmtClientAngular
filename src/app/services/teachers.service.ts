@@ -7,11 +7,37 @@ import { Teacher } from '../interfaces/teacher';
   providedIn: 'root',
 })
 export class TeachersService {
+<<<<<<< HEAD
   baseUrl = 'https://localhost:7003/api/Teacher/GetTeacher';
+=======
+
+  baseUrlGet = 'https://localhost:7003/api/Teacher/GetTeacher';
+  baseUrlPost = 'https://localhost:7003/api/Teacher/CreateTeacher';
+  baseUrlPut = 'https://localhost:7003/api/Teacher/UpdateTeacher';
+  baseUrlDelete = 'https://localhost:7003/api/Teacher/DeleteTeacher';
+>>>>>>> a575978d32f3c22527a4f38e560ceb7cced76eaa
 
   constructor(private http: HttpClient) {}
 
+<<<<<<< HEAD
   getAllTeachers(): Observable<Teacher[]> {
     return this.http.get<Teacher[]>(this.baseUrl);
+=======
+  getAllTeachers(): Observable<Teacher[]>{
+    return this.http.get<Teacher[]>(this.baseUrlGet);
+>>>>>>> a575978d32f3c22527a4f38e560ceb7cced76eaa
   }
+
+  addTeacher(teacher: Teacher): Observable<Teacher>{
+    teacher.teacherId=0;
+    return this.http.post<Teacher>(this.baseUrlPost, teacher);
+  }
+  deleteTeacher(id: number): Observable<Teacher>{
+    return this.http.delete<Teacher>(this.baseUrlDelete+'/'+id);
+  }
+  updateTeacher(teacher: Teacher): Observable<Teacher>{
+    
+    return this.http.post<Teacher>(this.baseUrlPut, teacher)
+  }
+  
 }

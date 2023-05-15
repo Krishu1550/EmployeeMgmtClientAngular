@@ -1,13 +1,13 @@
-import { StudentCourse } from "./studentCourse";
-import { Teacher } from "./teacher";
+import { StudentCourse } from './studentCourse';
+import { Teacher } from './teacher';
 
-export interface Course {
-    courseId: number;
-    courseName: string;
-    numOfSlot: number;
-    numOfClassPerWeek: number;
-    teacherId: number;
-    teacher?: Teacher;
-    assignmentFile?: string;
-    studentCourses?: StudentCourse[] | undefined;
-  }
+export class Course {
+  courseId: number | undefined;
+  courseName: string | undefined;
+  numOfSlot: number | undefined;
+  numOfClassPerWeek: number | undefined;
+  teacherId: number | undefined;
+  teacher?: Teacher | undefined;
+  assignmentFile?: string | undefined;
+  studentCourses?: StudentCourse[] | undefined;
+}

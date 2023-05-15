@@ -1,64 +1,75 @@
 <div class="Container">
-	<div class="row">
-		<button type="button" class="btn btn-info" (click)="toggleCreateForm()"> Create </button>
-	</div>
-	
-	<form  *ngIf="showForm" #form="ngForm" (ngSubmit)="onSubmit()">
-		<fieldset>
-			<div class="form-group">
-				<label>Course Name</label>
-				<input type="text" name="CourseName" [(ngModel)]="course.courseName">
-			</div>
-            <div class="form-group">
-				<label>No of Slots in Day</label>
-				<input type="number" name="NumOfSlot" [(ngModel)]="course.numOfSlot">
-			</div>
-            <div class="form-group">
-				<label>No of Classes in Weeks</label>
-				<input type="number" name="NumOfClassPerWeek" [(ngModel)]="course.numOfClassPerWeek">
-			</div>
-            <div class="form-group">
-				<label>Teacher Id</label>
-				<input type="number" name="TeacherId" [(ngModel)]="course.teacherId">
-			</div>
-			<div class="form-group">
-				<button *ngIf="courses" type="submit" class="btn btn-success"> Create </button>
-			</div>
-		</fieldset>
-	</form>
+  <div class="row">
+    <button type="button" class="btn btn-info" (click)="toggleCreateForm()">
+      Create
+    </button>
+  </div>
 
-	<table *ngIf="!showForm && courses"  class="table table-striped">
-		<thead>
-			<tr>
-				<th>
-					Id
-				</th>
-				<th>
-					CourseName
-				</th>
-                <th>
-					TeacherId
-				</th>
+  <form *ngIf="showForm" #form="ngForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <div class="form-group">
+        <label>Course Name</label>
+        <input type="text" name="CourseName" [(ngModel)]="course.courseName" />
+      </div>
+      <div class="form-group">
+        <label>No of Slots in Day</label>
+        <input type="number" name="NumOfSlot" [(ngModel)]="course.numOfSlot" />
+      </div>
+      <div class="form-group">
+        <label>No of Classes in Weeks</label>
+        <input
+          type="number"
+          name="NumOfClassPerWeek"
+          [(ngModel)]="course.numOfClassPerWeek"
+        />
+      </div>
+      <div class="form-group">
+        <label>Teacher Id</label>
+        <input type="number" name="TeacherId" [(ngModel)]="course.teacherId" />
+      </div>
+      <div class="form-group">
+        <button *ngIf="courses" type="submit" class="btn btn-success">
+          Create
+        </button>
+      </div>
+    </fieldset>
+  </form>
 
-				<th>
-					Edit
-				</th>
-				<th>
-					Delete
-				</th>
-			</tr>
-		</thead>
-		<tbody>
+  <table *ngIf="!showForm && courses" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>CourseName</th>
+        <th>TeacherId</th>
 
-			<tr  *ngFor = "let course of courses">
-
-				<td>{{course.courseId}}</td>
-				<td>{{course.courseName}}</td>
-                <td>{{course.teacherId}}</td>
-				<td (click)= "populateData(course)"><button type="submit" class="btn btn-success" (click)="updateCourse(course)"> Edit </button></td>
-				<td><button type="submit" class="btn btn-success"(click)="deleteCourse(course.courseId)"> Delete </button></td>
-
-			</tr>
-		</tbody>
-	</table>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses">
+        <td>{{ course.courseId }}</td>
+        <td>{{ course.courseName }}</td>
+        <td>{{ course.teacherId }}</td>
+        <td (click)="populateData(course)">
+          <button
+            type="submit"
+            class="btn btn-success"
+            (click)="updateCourse(course)"
+          >
+            Edit
+          </button>
+        </td>
+        <td>
+          <button
+            type="submit"
+            class="btn btn-success"
+            (click)="deleteCourse(course)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -10,34 +10,18 @@ import { TeachersService } from '../services/teachers.service';
 })
 export class TeacherComponent implements OnInit {
   title = 'EmployeeClientManagement';
-<<<<<<< HEAD
-  teachers: Teacher[] = [];
-=======
+
+
   showForm : boolean = false;
  
   teachers : Teacher[] = [];
->>>>>>> a575978d32f3c22527a4f38e560ceb7cced76eaa
+
   teacher: Teacher = {
     teacherId: 0,
     teacherName: '',
     courses: undefined,
   };
 
-<<<<<<< HEAD
-  constructor(private teacherService: TeachersService) {}
-  ngOnInit(): void {
-    this.getAllTeachers();
-  }
-
-  getAllTeachers() {
-    this.teacherService.getAllTeachers().subscribe((response: Teacher[]) => {
-      this.teachers = response;
-    });
-  }
-
-  onSubmit() {
-    console.log(this.teacher);
-=======
   constructor(private teacherService: TeachersService,
     private router : Router){
 
@@ -113,6 +97,6 @@ export class TeacherComponent implements OnInit {
       }
 
     );
->>>>>>> a575978d32f3c22527a4f38e560ceb7cced76eaa
+
   }
 }

@@ -10,21 +10,38 @@ import { TeachersService } from '../services/teachers.service';
 })
 export class TeacherComponent implements OnInit {
   title = 'EmployeeClientManagement';
+<<<<<<< HEAD
   showForm : boolean = false;
 
   teachers: Teacher[] = [];
+=======
+
+
+  showForm : boolean = false;
+ 
+  teachers : Teacher[] = [];
+
+>>>>>>> a452acdac71e582f9018c3f9fafdea384178c394
   teacher: Teacher = {
     teacherId: 0,
     teacherName: '',
     courses: undefined,
   };
 
+<<<<<<< HEAD
 
   constructor(private teacherService: TeachersService , private router : Router) {
 
   }
   ngOnInit(): void {
     this.getAllTeachers();
+=======
+  constructor(private teacherService: TeachersService,
+    private router : Router){
+
+  }
+  ngOnInit(): void {
+>>>>>>> a452acdac71e582f9018c3f9fafdea384178c394
     
   }
 

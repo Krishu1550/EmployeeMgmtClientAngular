@@ -1,4 +1,4 @@
 export interface LoginJWT {
-  Token: string;
-  Role: string;
+  token: string;
+  role: string;
 }

@@ -1,19 +1,18 @@
-<div class="container">
-    <h3 class="d-flex justify-content-center"></h3>
-    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-            <div>
-          <button routerLink="teacher" class="m-1 btn btn-light btn-outline-primary" Button>Teachers</button>
-          </div>
-          <div>
-          <button routerLink="course" class="m-1 btn btn-light btn-outline-primary" Button>Courses</button>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 d-none d-md-block bg-dark sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a clas="nav-link active" routerLink="../teacher"> Teachers </a>
+          </li>
 
-        </li>
-        
-      </ul>
-    </nav>
-    <router-outlet></router-outlet>
-  </div> 
-
+          <li class="nav-item">
+            <a clas="nav-link" routerLink="../course"> Courses </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

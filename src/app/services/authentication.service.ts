@@ -15,14 +15,16 @@ export class AuthenticationServices {
   token: string | null = null;
 
   onLogInService(loginForm: any) {
-    console.log(loginForm.value);
+    console.log(loginForm.value.email);
+    localStorage.setItem('username', loginForm.value.email);
     return this.http
       .post('https://localhost:7003/api/Account/Login', loginForm.value)
       .pipe(
         tap((res) => {
-          console.log(res);
           this.jwtToken = res as LoginJWT;
-          this.token = this.jwtToken.Token;
+          this.token = this.jwtToken.token;
+
+          localStorage.setItem('Token', this.token);
         })
       );
   }

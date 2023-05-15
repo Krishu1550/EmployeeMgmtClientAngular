@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Student Profile</h1>
+  <div>
+    <form [formGroup]="studentform" (ngSubmit)="UpdateStudent()">
+      <div>
+        <label> Student Id </label>
+        <input
+          formControlName="studentId"
+          [disabled]="true"
+          class="form-control"
+        />
+      </div>
+      <div>
+        <label> Email </label>
+        <input formControlName="email" [disabled]="true" class="form-control" />
+      </div>
+      <div>
+        <label> Student Name </label>
+        <input formControlName="studentName" class="form-control" />
+      </div>
+      <div>
+        <label>Date of Birth </label>
+        <input
+          type="datetime"
+          formControlName="dateOfBirth"
+          class="form-control"
+        />
+      </div>
+      <button type="submit" class="btn btn-sm btn-success">
+        Update Details
+      </button>
+    </form>
+  </div>
+</div>

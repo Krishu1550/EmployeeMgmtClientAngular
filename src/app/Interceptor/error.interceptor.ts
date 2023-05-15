@@ -20,16 +20,17 @@ export class ErrorInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status === 401) {
-          // Handle unauthorized error
-        } else if (error.status === 404) {
-          // Handle not found error
-        } else if (error.status === 500) {
-          // Handle server error
-        } else {
-          // Handle other errors
-        }
-        return throwError(error);
+        console.log(error);
+        // if (error.status === 401) {
+        //   // Handle unauthorized error
+        // } else if (error.status === 404) {
+        //   // Handle not found error
+        // } else if (error.status === 500) {
+        //   // Handle server error
+        // } else {
+        //   // Handle other errors
+        // }
+        throw error;
       })
     );
   }

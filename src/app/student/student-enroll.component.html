@@ -1,0 +1,36 @@
+<div class="container">
+  <p>Enroll New course</p>
+  <div class="row">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Course Id</th>
+          <th>Course Name</th>
+          <th>Teacher Id</th>
+          <th class="active text-center">UnEnroll</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of enrollCourses">
+        <tr>
+          <td>
+            {{ item.courseId }}
+          </td>
+
+          <td>
+            {{ item.courseName }}
+          </td>
+
+          <td>
+            {{ item.teacherId }}
+          </td>
+          <td
+            class="nav-link btn btn-danger btn-sm"
+            (click)="enrollCourse(item.courseId)"
+          >
+            Enroll
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

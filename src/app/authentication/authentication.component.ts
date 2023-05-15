@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthenticationComponent {
   loginForm: FormGroup;
+  showForm: boolean = false;
   serviceAuthentication: AuthenticationServices;
   router: Router;
 
@@ -31,13 +32,20 @@ export class AuthenticationComponent {
     this.serviceAuthentication
       .onLogInService(this.loginForm)
       .subscribe((result) => {
-        console.log(result);
-        if (result) {
-          this.router.navigate(['student']);
+        this.showForm = !this.showForm;
+  
+
+    var role= localStorage.getItem("Role");
+         console.log("Role: "+role?.toLowerCase());
+          this.router.navigate([role?.toLowerCase()]);
+
+          //this.router.navigate(['authentication/login']);
         }
-      });
-  }
+      )
+      };
+  
+  
   OnInit() {
     console.log(this.serviceAuthentication.jwtToken?.token);
-  }
+  }  
 }

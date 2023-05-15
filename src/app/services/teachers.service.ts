@@ -7,13 +7,12 @@ import { Teacher } from '../interfaces/teacher';
   providedIn: 'root',
 })
 export class TeachersService {
-<<<<<<< HEAD
+
 
   baseUrl = 'https://localhost:7003/api/Teacher/GetTeacher';
 
 
-=======
->>>>>>> a452acdac71e582f9018c3f9fafdea384178c394
+
   baseUrlGet = 'https://localhost:7003/api/Teacher/GetTeacher';
   baseUrlPost = 'https://localhost:7003/api/Teacher/CreateTeacher';
   baseUrlPut = 'https://localhost:7003/api/Teacher/UpdateTeacher';
@@ -21,17 +20,15 @@ export class TeachersService {
 
   constructor(private http: HttpClient) {}
 
-<<<<<<< HEAD
+
 
   
 
-  getAllTeachers(): Observable<Teacher[]>{
-    return this.http.get<Teacher[]>(this.baseUrlGet);
+  
 
-=======
   getAllTeachers(): Observable<Teacher[]> {
     return this.http.get<Teacher[]>(this.baseUrlGet);
->>>>>>> a452acdac71e582f9018c3f9fafdea384178c394
+
   }
 
   addTeacher(teacher: Teacher): Observable<Teacher> {

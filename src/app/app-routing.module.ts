@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AdminDashboardComponent } from './admin/dashboard/dashboard.component';
 import { StudentDashboardComponent } from './student/dashboard/dashboard.component';
 import { StudentComponent } from './student/student.component';
-import { StudentEnrollCourse } from './student/student-enroll.component';
+import { StudentEnrollCourse } from './student/Student-EnrollCourse/student-enroll.component';
 import { StudentEnrolledCourse } from './student/student-enrolled.component';
 import { StudentUnEnrollCourse } from './student/student-unenroll.component';
 

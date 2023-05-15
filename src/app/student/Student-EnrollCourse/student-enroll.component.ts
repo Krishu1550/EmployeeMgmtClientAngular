@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { StudentService } from '../services/student.service';
-import { CoursesService } from '../services/courses.service';
-import { Course } from '../interfaces/course';
+import { StudentService } from '../../services/student.service';
+import { CoursesService } from '../../services/courses.service';
+import { Course } from '../../interfaces/course';
 import { Router } from '@angular/router';
 
 @Component({

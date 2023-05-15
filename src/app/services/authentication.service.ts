@@ -23,8 +23,10 @@ export class AuthenticationServices {
         tap((res) => {
           this.jwtToken = res as LoginJWT;
           this.token = this.jwtToken.token;
+        
 
           localStorage.setItem('Token', this.token);
+          localStorage.setItem("Role",this.jwtToken.role);
         })
       );
   }

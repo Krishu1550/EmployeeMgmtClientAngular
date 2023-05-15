@@ -20,12 +20,6 @@ export class TeachersService {
 
   constructor(private http: HttpClient) {}
 
-
-
-  
-
-  
-
   getAllTeachers(): Observable<Teacher[]> {
     return this.http.get<Teacher[]>(this.baseUrlGet);
 

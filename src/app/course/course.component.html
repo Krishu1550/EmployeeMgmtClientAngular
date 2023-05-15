@@ -1,8 +1,10 @@
 <div class="Container">
   <div class="row">
-    <button type="button" class="btn btn-info" (click)="toggleCreateForm()">
+	<div class="col-12" style="text-align:left">
+    <button type="button" class="btn btn-primary btn-md" (click)="toggleCreateForm()">
       Create
     </button>
+	</div>
   </div>
 
   <form *ngIf="showForm" #form="ngForm" (ngSubmit)="onSubmit()">

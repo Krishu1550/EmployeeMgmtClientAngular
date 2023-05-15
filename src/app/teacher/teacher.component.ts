@@ -29,7 +29,7 @@ export class TeacherComponent implements OnInit {
 
   }
   ngOnInit(): void {
-
+    this.getAllTeachers();
     
   }
 

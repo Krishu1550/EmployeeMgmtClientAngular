@@ -50,7 +50,8 @@ export class StudentService {
     this.http.post<EnrollCourse>(
       this.baseurl + 'Student/UnEnrollCourse',
       this.courseEnroll
-    );
+    )
+    .subscribe();
   }
 
   enrollCourse(courseId: number | undefined) {

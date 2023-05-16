@@ -11,6 +11,7 @@ import { StudentComponent } from './student/student.component';
 import { StudentEnrollCourse } from './student/Student-EnrollCourse/student-enroll.component';
 import { StudentEnrolledCourse } from './student/student-enrolled.component';
 import { StudentUnEnrollCourse } from './student/student-unenroll.component';
+import { RegisterComponent } from './authentication/register/register.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'student-enrolledcourse',
     component: StudentEnrolledCourse,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
   {
     path: 'unenroll',

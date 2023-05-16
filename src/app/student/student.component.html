@@ -2,14 +2,13 @@
   <h1>Student Profile</h1>
   <div>
     <form [formGroup]="studentform" (ngSubmit)="UpdateStudent()">
-      <div>
-        <label> Student Id </label>
-        <input
-          formControlName="studentId"
-          [disabled]="true"
+      <!-- <div>
+        <label> Student Id </label> 
+        <input formControlName="studentId"
+        
           class="form-control"
         />
-      </div>
+      </div> -->
       <div>
         <label> Email </label>
         <input formControlName="email" [disabled]="true" class="form-control" />
@@ -26,7 +25,7 @@
           class="form-control"
         />
       </div>
-      <button type="submit" class="btn btn-sm btn-success">
+      <button type="submit" class="btn btn-sm btn-success" >
         Update Details
       </button>
     </form>

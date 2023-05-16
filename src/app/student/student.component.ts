@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../services/student.service';
 import { Student } from '../interfaces/student';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -11,11 +12,12 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class StudentComponent implements OnInit {
   studentProfile?: Student;
   studentform!: FormGroup;
+ 
 
-  constructor(private studentservice: StudentService, private fb: FormBuilder) {
+  constructor(private studentservice: StudentService, private fb: FormBuilder, private router: Router) {
     this.inittializeForm();
   }
-
+  
   ngOnInit(): void {
     this.studentservice.getProfile()?.subscribe({
       next: (data) => {
@@ -38,5 +40,7 @@ export class StudentComponent implements OnInit {
 
   UpdateStudent() {
     this.studentservice.UpdateProfile(this.studentform);
+    this.router.navigate(['/student']);
   }
+
 }

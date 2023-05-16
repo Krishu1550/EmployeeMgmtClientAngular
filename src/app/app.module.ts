@@ -20,6 +20,7 @@ import { StudentService } from './services/student.service';
 import { ErrorInterceptor } from './Interceptor/error.interceptor';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RegisterComponent } from './authentication/register/register.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     StudentEnrollCourse,
     StudentEnrolledCourse,
     StudentDashboardComponent,
+    RegisterComponent,
 
   ],
   imports: [

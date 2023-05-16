@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterModel } from 'src/app/interfaces/registerModel';
+import { RegisterModelVM } from 'src/app/interfaces/registerModelVM';
 import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
@@ -11,11 +11,11 @@ import { RegisterService } from 'src/app/services/register.service';
 export class RegisterComponent  {
   title = 'EmployeeClientManagement';
   showForm: boolean = false;
-  register: RegisterModel = {
+  register: RegisterModelVM = {
     fullName:'',
     email: '',
     password: '',
-    role: ''
+    confirmPassword: ''
   };
 
   constructor(private registerService: RegisterService, private router: Router) {}
@@ -28,10 +28,16 @@ export class RegisterComponent  {
           fullName:'',
           email: '',
           password: '',
-          role: ''
+          confirmPassword: ''
         }
       }
     );
+    if (this.register.password !== this.register.confirmPassword) {
+       'Passwords do not match.';
+    } else {
+     
+      this.router.navigate(['/login']);
+    }
   }
 }
 

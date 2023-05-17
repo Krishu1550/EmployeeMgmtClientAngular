@@ -19,26 +19,16 @@ export class RegisterComponent  {
   };
 
   constructor(private registerService: RegisterService, private router: Router) {}
-  registerStudent() {
-    if (this.register.email === ''){
+  registerStudent() 
+   {
+
+
       this.registerService.addRegisterUser(this.register)
-    .subscribe(
-      response => {
-        this.register = {
-          fullName:'',
-          email: '',
-          password: '',
-          confirmPassword: ''
-        }
-      }
-    );
-    if (this.register.password !== this.register.confirmPassword) {
-       'Passwords do not match.';
-    } else {
-     
-      this.router.navigate(['/login']);
-    }
+    .subscribe();
+    
+      
+    
+
   }
-}
 
 }

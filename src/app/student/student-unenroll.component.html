@@ -1,4 +1,4 @@
-<h4 class="ms-auto">Unenroll</h4>
+<h4 class="ms-auto">Please Check Before UnEnroll</h4>
 <div class="container">
   <div class="row">
     <div class="row">
@@ -9,6 +9,7 @@
       <div class="row">Teacher Id : {{ course.teacherId }}</div>
       <div class="row">Num of Slot/day: {{ course.numOfSlot }}</div>
       <div class="row">Weeks No: {{ course.numOfClassPerWeek }}</div>
+      <button type="submit" class="btn btn-danger my-1" (click)="unenrollCourse(course.courseId)">Unenroll</button>
     </div>
   </div>
 </div>

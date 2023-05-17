@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../services/student.service';
 import { Course } from '../interfaces/course';
 import { CoursesService } from '../services/courses.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { map } from 'rxjs';
 
@@ -19,24 +19,32 @@ export class StudentUnEnrollCourse implements OnInit {
     teacherId: 0,
     assignmentFile: '',
     studentCourses: undefined,
+   
   };
 
-  constructor(private service: CoursesService) {
+  constructor(private service: CoursesService,private studentservice:StudentService, private router : Router) {
     this.getCourseDetails();
-    this.service.courseEmiter.subscribe({
-      next: (data) => (this.course = data),
-    });
+   
   }
   ngOnInit(): void {}
 
   getCourseDetails() {
-    this.service.courseEmiter.subscribe({
-      next: (data) => {
-        console.log(data);
-        this.course = data;
-        this.course.courseId = data.courseId;
-        this.course.courseName = data.courseName;
-      },
-    });
+   this.course= this.service.getcourseDetails();
+  }
+
+  unenrollCourse(courseId:number|undefined)
+  {
+
+    if(courseId==null)
+    {
+      
+    }
+    else
+    {
+      this.studentservice.unEnrollCourse(courseId)
+      this.router.navigate(['student-enrollcourse']);
+    }
+
+
   }
 }

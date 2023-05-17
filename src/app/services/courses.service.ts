@@ -9,7 +9,15 @@ import { environment } from 'src/environments/environment.development';
 })
 export class CoursesService {
   baseUrl = environment.apiUrl + 'Course/';
-  course?: Course;
+  course: Course = {
+    courseId: 0,
+    courseName: '',
+    numOfSlot: 0,
+    numOfClassPerWeek: 0,
+    teacherId: 0,
+    assignmentFile: '',
+    studentCourses: undefined,
+  };
   constructor(private http: HttpClient) {}
   courseEmiter = new Subject<Course>();
 
@@ -34,6 +42,10 @@ export class CoursesService {
   }
 
   courseDetails(course: Course) {
-    this.courseEmiter.next(course);
+   this.course=course;
+  }
+  getcourseDetails()
+  {
+    return this.course;
   }
 }
